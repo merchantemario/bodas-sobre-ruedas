@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARRETES - BODAS SOBRE RUEDAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilo Masonry */
+        .masonry-container {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) { .masonry-container { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-container { column-count: 3; } }
+
+        .carrete-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+    <nav class="bg-green-800 p-5 shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center text-white">
+            <a href="index.html" class="font-black text-2xl uppercase italic tracking-tighter">Bodas sobre Ruedas</a>
+            <a href="index.html" class="bg-white text-green-800 px-6 py-2 rounded-full font-bold hover:bg-green-50 transition-all text-sm shadow-md">VOLVER AL INICIO</a>
+        </div>
+    </nav>
+
+    <header class="py-16 text-center">
+        <h1 class="text-5xl font-black uppercase italic text-green-700 tracking-tighter drop-shadow-sm">NUESTROS CARRETES</h1>
+        <div class="w-16 h-1 bg-green-600 mx-auto mt-6 rounded-full"></div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-6">
+        <div id="contenedor-carretes" class="masonry-container">
+            </div>
+    </main>
+
+    <script>
+        async function cargarCarretes() {
+            const contenedor = document.getElementById('contenedor-carretes');
+            try {
+                // Forzamos carga fresca del JSON
+                const respuesta = await fetch('carretes.json?v=' + Date.now());
+                if (!respuesta.ok) throw new Error("Error al leer JSON");
+                
+                const datos = await respuesta.json();
+                contenedor.innerHTML = ""; 
+
+                datos.forEach(item => {
+                    const div = document.createElement('div');
+                    // Sombras más suaves sobre fondo blanco
+                    div.className = "carrete-item rounded-[2rem] overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:scale-[1.03] bg-gray-50";
+                    
+                    div.innerHTML = `
+                        <img src="${item.archivo}" 
+                             class="w-full h-auto block" 
+                             style="min-height: 200px;"
+                             onerror="this.src='https://via.placeholder.com/400x600?text=Foto+no+encontrada'">
+                    `;
+                    contenedor.appendChild(div);
+                });
+            } catch (error) {
+                contenedor.innerHTML = `<p class="text-center text-red-500 font-bold">Asegúrate de que 'carretes.json' esté bien escrito.</p>`;
+                console.error("Error:", error);
+            }
+        }
+        cargarCarretes();
+    </script>
+</body>
+</html>

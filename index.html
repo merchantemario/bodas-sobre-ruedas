@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BODAS SOBRE RUEDAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Efecto para el menú desplegable */
+        .group:hover .group-hover\:block { display: block; }
+        
+        /* Animación suave para la sección de pedido */
+        #seccion-pedido {
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* Botón flotante de WhatsApp */
+        #whatsapp-flotante {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        #whatsapp-flotante:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <nav class="bg-green-800 p-4 shadow-xl sticky top-0 z-50 text-white">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-black text-2xl tracking-tighter uppercase italic">Bodas sobre Ruedas</a>
+            
+            <div class="relative group">
+                <button class="bg-green-700 px-6 py-2 rounded-xl font-bold flex items-center gap-2 hover:bg-green-600 transition-all border border-green-500 shadow-md uppercase text-sm">
+                    MENÚ ☰
+                </button>
+                <div class="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl overflow-hidden hidden group-hover:block border border-gray-100">
+                    <a href="index.html" class="block px-6 py-4 text-gray-800 hover:bg-green-50 hover:text-green-700 font-bold border-b border-gray-50">🚗 Vehículos</a>
+                    <a href="carretes.html" class="block px-6 py-4 text-gray-800 hover:bg-green-50 hover:text-green-700 font-bold">🎥 Carretes</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-green-700 py-16 px-6 text-white text-center shadow-inner">
+        <h1 class="text-5xl md:text-6xl font-black tracking-tight uppercase italic drop-shadow-lg">BODAS SOBRE RUEDAS</h1>
+        <p class="mt-4 text-green-100 italic text-xl max-w-2xl mx-auto font-medium">Haz que tu llegada sea inolvidable. Toca cada vehículo para descubrir su historia.</p>
+        <div class="w-24 h-1 bg-white mx-auto mt-6 rounded-full opacity-50"></div>
+    </header>
+
+    <main id="contenedor-productos" class="max-w-6xl mx-auto p-8 grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
+        </main>
+
+    <section id="seccion-pedido" class="max-w-xl mx-auto my-20 p-10 bg-white rounded-[2.5rem] shadow-2xl hidden border border-gray-100">
+        <h2 class="text-3xl font-black text-green-800 mb-6 text-center uppercase tracking-tighter italic">Tu Selección</h2>
+        
+        <div id="lista-seleccionados" class="mb-10 p-6 bg-green-50 text-green-900 rounded-2xl border-l-8 border-green-600 font-bold text-xl text-center shadow-sm">
+            </div>
+
+        <form id="formulario-pedido" class="space-y-6">
+            <div>
+                <label class="block text-xs font-black text-green-700 mb-2 uppercase tracking-widest ml-1 text-left">Nombre del interesado</label>
+                <input type="text" id="nombre" placeholder="Escribe tu nombre completo" required 
+                    class="w-full p-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:ring-4 focus:ring-green-100 focus:border-green-600 outline-none transition-all font-medium text-lg text-gray-800">
+            </div>
+            
+            <div>
+                <label class="block text-xs font-black text-green-700 mb-2 uppercase tracking-widest ml-1 text-left">Teléfono / WhatsApp</label>
+                <input type="tel" id="telefono" placeholder="Ej: 600 00 00 00" required 
+                    class="w-full p-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:ring-4 focus:ring-green-100 focus:border-green-600 outline-none transition-all font-medium text-lg text-gray-800">
+            </div>
+
+            <button type="submit" class="w-full bg-green-600 text-white py-6 rounded-3xl font-black text-2xl hover:bg-green-700 transform hover:-translate-y-1 transition-all shadow-xl uppercase flex justify-center items-center gap-4 mt-8">
+                <span>SOLICITAR AHORA</span>
+                <svg width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
+                </svg>
+            </button>
+        </form>
+    </section>
+
+    <a id="whatsapp-flotante" href="https://wa.me/34691320769" target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white p-5 rounded-full z-50 flex items-center justify-center border-4 border-white shadow-2xl">
+        <svg width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+<footer class="bg-gray-100 py-10 text-center border-t border-gray-200 mt-20">
+    <p class="font-black uppercase italic text-green-800 text-xl">Bodas sobre Ruedas</p>
+    <p class="text-gray-500 text-sm mt-2">© 2026 - Haciendo vuestro día inolvidable.</p>
+    <div class="flex justify-center gap-6 mt-4">
+        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Elegancia</span>
+        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Puntualidad</span>
+        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Confianza</span>
+    </div>
+</footer>
+</html>

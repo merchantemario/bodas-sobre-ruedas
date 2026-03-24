@@ -1,0 +1,48 @@
+/* Configuración para el giro de la tarjeta */
+.card-container {
+    perspective: 1500px;
+    height: 600px; /* Aumentamos la altura para que la foto luzca */
+}
+
+/* Importante: para que la foto ocupe todo el ancho sin bordes blancos */
+.card-front {
+    padding: 0 !important; 
+}
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Esta clase se activa al hacer clic con el JS */
+.card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara que queda detrás */
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+}
+
+/* Estilo de la cara delantera */
+
+
+/* Estilo de la cara trasera */
+.card-back {
+    background: #1e40af; /* Azul oscuro */
+    color: white;
+    transform: rotateY(180deg); /* Empieza ya girada */
+    z-index: 1;
+}
+
+/* Efecto sombra extra al pasar el ratón */
+.card-container:hover .card-front {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}

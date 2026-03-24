@@ -1,0 +1,28 @@
+[
+    
+    {
+        "nombre": "BMW Serie 1 Cabrio",
+        "descripcion": "Elegancia y exclusividad a cielo abierto",
+        "info_detallada": "El BMW Serie 1 Cabrio es una opción elegante y moderna para quienes desean llegar a su boda con estilo y un toque de exclusividad. Este descapotable combina el diseño deportivo con la sofisticación perfecta. Su silueta dinámica y capota de lona retráctil permiten disfrutar de una experiencia a cielo abierto, creando una llegada espectacular y muy fotogénica.",
+        "imagen": "img/bmw.jpeg"
+    },
+    {
+        "nombre": "Lambretta 125 LD",
+        "descripcion": "Encanto vintage italiano de los años 50",
+        "info_detallada": "Una auténtica joya del motociclismo clásico que aporta un encanto vintage inigualable. Fabricada por la histórica marca italiana Innocenti, representa el espíritu romántico de los años 50. Su diseño icónico con detalles cromados la convierte en el complemento ideal para crear rincones especiales, entradas originales o sesiones fotográficas llenas de personalidad.",
+        "imagen": "img/moto.jpeg"
+    },
+    {
+        "nombre": "Volkswagen Caddy",
+        "descripcion": "Estilo ochentero con carácter único",
+        "info_detallada": "Este clásico compacto aporta un toque vintage y auténtico. Fabricado por Volkswagen, representa el estilo sencillo y elegante de los años 80. Con su carrocería de dos puertas y líneas rectas, destaca por su estética retro. Es una opción ideal para parejas que buscan un coche diferente, con carácter y un aire nostálgico que encaja en bodas informales.",
+        "imagen": "img/verde.jpeg"
+    },
+    {
+        "nombre":"Volwagen Polo",
+        "descripcion":"Proximamente",
+        "info_detallada":"Estamos trabajando para que proximamente tengas algo muy unico",
+        "imagen":"img/polo.jpeg"
+    }
+  ]
+
